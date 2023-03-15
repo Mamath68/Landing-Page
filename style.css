@@ -1,18 +1,15 @@
-* {
-    margin: 0;
-    box-sizing: border-box;
-}
+/* ****************Général********** */
 
 body {
     background: radial-gradient(rgb(139, 195, 245), #1294B8);
 }
 
+/* ********************NAVBAR********** */
 nav ul {
     padding: 2em;
     display: flex;
     justify-content: space-evenly;
     list-style: none;
-    background-color: (rgb(139, 195, 245), #1294B8);
     margin-bottom: 5%;
 }
 
@@ -21,16 +18,22 @@ li a {
     color: white;
 }
 
+/* ***************Le Reste*********************** */
 .flex {
     display: flex;
     justify-content: center;
+}
+
+.reject {
+    margin-right: 4em;
+    margin-top: 6em;
 }
 
 .form {
     background-color: white;
     width: fit-content;
     border-radius: 20px;
-    margin-top : 20px;
+    margin-top: 20px;
 }
 
 .bg {
@@ -56,9 +59,4 @@ p {
     border-radius: 20px;
     margin-right: 10px;
     padding: 10px;
-}
-
-.reject {
-    margin-right: 4em;
-    margin-top: 6em;
 }
