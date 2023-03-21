@@ -1,0 +1,47 @@
+/* iPads (portrait) ----------- */
+@media only screen and (min-device-width : 820px) and (max-device-width : 1080px) and (orientation : portrait) {
+
+    /* ****************Général****************************** */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    .header {
+        background: radial-gradient(rgb(139, 195, 245), #1294B8);
+        height: 100vh;
+    }
+
+    nav {
+        overflow: hidden;
+        position: relative;
+    }
+
+    nav #myLinks {
+        display: none;
+    }
+
+    nav a {
+        color: white;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        display: block;
+    }
+
+    nav a.icon {
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    nav a:hover {
+        color: black;
+    }
+}
+
+/* iPads (landscape) ----------- */
+/* 
+@media only screen and (min-device-width : 1080px) and (max-device-width : 820px) and (orientation : landscape) {
+
+} */

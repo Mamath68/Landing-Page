@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 
 /* ****************Général****************************** */
+html {
+    scroll-behavior: smooth;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -24,25 +28,31 @@
 
 .kucra {
     height: 50vh;
-    background-image: url(img/parallax.png);
-    background-repeat: no-repeat;
-}
-/*
-.client {
-    height: 100vh;
-}
-
-.creative {
-    height: 100vh;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)), url("img/parallax.png")
 }
 
-.pricing {
-    height: 100vh;
+
+.go_top {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    background: black;
+    bottom: 40px;
+    right: 50px;
+    text-align: center;
+    line-height: 55px;
+    color: white;
+    font-size: 30px;
+    border-radius: 50%;
 }
 
-.blog {
-    height: 100vh;
-} */
+.center {
+    text-align: center;
+}
 
 /* ********************NAVBAR**************************** */
 nav ul {
@@ -71,11 +81,16 @@ li a {
     margin-right: 20px;
 }
 
+.svg:hover {
+    cursor: pointer;
+}
+
 .bold {
     font-weight: bold;
     font-size: 30px;
     margin-right: 50px;
-    margin-top: -10px;
+    list-style: none;
+    margin-top: 20px;
 }
 
 
@@ -112,21 +127,22 @@ input {
     border-radius: 20px;
 }
 
-button {
+.subscribe {
     background-color: #1294B8;
     color: white;
     border-radius: 20px;
     padding: 10px;
 }
 
-button:hover {
+.subscribe:hover {
     box-shadow: 0px 2px 10px 5px;
     color: white;
     transition: 0.3s;
     transform: scale(1.1);
+    cursor: pointer;
 }
 
-button:focus {
+.subscribe:focus {
     outline: 0;
 }
 
@@ -138,16 +154,21 @@ button:focus {
     height: 500px;
 }
 
-/* ******************* Product Features********************** */
-
-h2 {
-    text-align: center;
+.bg2 {
+    background-image: url(img/creativity.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-top: 5%;
+    width: 500px;
+    height: 500px;
 }
+
+/* ******************* Product Features********************** */
 
 .icons {
     margin-top: 80px;
-    height: 50px;
-    color: white;
+    font-size: 60px;
+    margin-bottom: 20px;
 }
 
 .card {
@@ -156,6 +177,7 @@ h2 {
     width: 350px;
     height: 340px;
     margin-left: 2em;
+    text-align: center;
     background-color: #1294B8;
     border-radius: 10px;
     color: white;
@@ -178,12 +200,12 @@ h4 {
 }
 
 /* ************************Dynamic********************* */
-.team-member figure img {
+.team-member .team .team2 {
     filter: grayscale(100%);
     transition: .3s ease-in-out;
 }
 
-.team-member-container:hover figure img {
+.team-member-container:hover .team .team2 {
     filter: grayscale(0);
     transform: scale(1.1);
 }
@@ -198,13 +220,14 @@ h4 {
 .team-member-container:hover .team-member-icons-container {
     top: 60px;
     left: 8px;
-    visibility:visible;
+    visibility: visible;
 }
 
 .column {
     display: flex;
     justify-content: space-evenly;
 }
+
 .column2 {
     display: flex;
     flex-direction: column;
@@ -218,7 +241,7 @@ h4 {
     visibility: hidden;
 }
 
-figure {
+.team {
     width: 195px;
     height: 195px;
     margin: 0;
@@ -226,7 +249,7 @@ figure {
     border-radius: 50%;
 }
 
-img {
+.team2 {
     width: 195px;
     height: 195px;
     border-radius: 50%;
@@ -238,25 +261,290 @@ img {
     display: flex;
 }
 
+.svg2:hover {
+    cursor: pointer;
+}
+
 .client {
     text-align: center;
-    color:gray; 
-    margin-bottom: 4em;
+    color: gray;
+    margin-bottom: 2em;
+}
+
+.margtop {
+    text-align: center;
+    margin-top: 15px;
 }
 
 .section {
-    text-align:center;
+    text-align: center;
     margin-top: 1em;
-    margin-bottom: 5em;
-    color:silver;
+    margin-bottom: 2em;
+    color: silver;
 }
 
-/* **********************Kucra********************************* */
-
-.getstart {
-   margin-left: 50%;
-   background-image: url(img/parallax.png);
+.descend {
+    margin-left: 35%;
+    width: 30%;
+    margin-top: 5em;
 }
+
+/**********************Kucra********************************* */
+.getstarted {
+    margin-left: 45%;
+    margin-top: 20px;
+    border-radius: 10px;
+    color: white;
+    padding: 20px;
+    width: 15%;
+    background: none;
+    border: 2px solid white;
+}
+
+.getstarted:hover {
+    background-color: white;
+    color: black;
+    transition: 0.3s;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.white {
+    text-align: center;
+    color: white;
+}
+
+/* ***********************Client***************************** */
+.pstyle {
+    margin-top: 1.5em;
+    margin-bottom: 2em;
+}
+
+.flex2 {
+    display: flex;
+    justify-content: center;
+    padding-top: 5%;
+}
+
+.figim {
+    width: 95px;
+    margin-right: 8%;
+    opacity: 0.5;
+}
+
+/* **********************Creative*********************** */
+
+.colonne {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.colonne2 {
+    margin-top: 10%;
+    display: flex;
+    justify-content: start;
+}
+
+.learn {
+    background-color: #1294B8;
+    color: white;
+    border-radius: 6px;
+    margin-top: 10%;
+    padding: 10px;
+    width: 30%;
+}
+
+.learn:hover {
+    box-shadow: 0px 2px 10px 5px;
+    color: white;
+    transition: 0.3s;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.learn:focus {
+    outline: 0;
+}
+
+/* ************************Pricing ************************* */
+.colonne3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-bottom: 20%;
+}
+
+.card2 {
+    transition: 0.3s;
+    width: 350px;
+    height: 450px;
+    background-color: white;
+    border-radius: 10px;
+    color: black;
+    margin-right: 30px;
+}
+
+.card3 {
+    transition: 0.3s;
+    width: 350px;
+    height: 450px;
+    background-color: white;
+    border-radius: 10px;
+    color: black;
+    margin-top: 50px;
+    margin-right: 30px;
+}
+
+.absolute {
+    position: relative;
+    background-color: blue;
+    color: white;
+    padding: 1em;
+    width: 25%;
+    top: -84px;
+    right: -254px;
+    border-radius: 0 15% 0 15%;
+
+}
+
+.span {
+    color: blue;
+}
+
+.descender{
+    margin-bottom: 30px;
+}
+.container2 {
+    margin-top: 10px;
+    padding: 2px 16px;
+}
+
+.join {
+    margin-left: 15px;
+    margin-top: 60px;
+    border-radius: 10px;
+    padding: 20px;
+    width: 90%;
+    background: white;
+    border: 2px solid blue;
+}
+
+.join:hover {
+    color: black;
+    transition: 0.3s;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.join2 {
+    margin-left: 15px;
+    margin-top: 40px;
+    border-radius: 10px;
+    padding: 20px;
+    width: 90%;
+    color: white;
+    background: blue;
+    border: 2px solid blue;
+}
+
+.join2:hover {
+    transition: 0.3s;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.Separated {
+    margin-bottom: 20px;
+}
+
+.baisser {
+    padding-top: 50px;
+}
+
+.baissermoin {
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+/* ***********************Blog**************************** */
+
+.team-member2 .team3 .team2 {
+    transition: .3s;
+}
+
+.team-member-container2:hover .team3 .team4 {
+    filter: brightness(50%);
+}
+
+
+.team-member-container2 {
+    position: relative;
+    overflow: hidden;
+}
+
+.team-member-container2:hover .team-member-icons-container2 {
+    top: 20px;
+    left: 25px;
+    visibility: visible;
+    color: white;
+    font-size: 15px;
+}
+
+.column3 {
+    display: flex;
+    justify-content: center;
+}
+
+.column4 {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+}
+
+.team-member-icons-container2 {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    visibility: hidden;
+}
+
+.team3 {
+    width: 400px;
+    height: 300px;
+    margin: 0;
+    padding: 0;
+    filter: none;
+}
+
+.team4 {
+    width: 400px;
+    height: 300px;
+}
+
+.svg3 {
+    display: flex;
+}
+
+.svg3:hover {
+    cursor: pointer;
+}
+
+.client2 {
+    margin-top: 20px;
+}
+
+.Read {
+    color: blue;
+    border-style: none;
+    background: none;
+}
+
+.Read:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
 /* ***********************Footer**************************** */
 
 footer {
@@ -267,8 +555,6 @@ footer {
 
 .fa {
     padding: 20px;
-    font-size: 30px;
-    width: 50px;
     text-align: center;
     text-decoration: none;
     margin: 5px 2px;
@@ -278,26 +564,12 @@ footer {
     opacity: 0.7;
 }
 
-.fa-facebook {
-    background: black;
-    color: white;
-    border-radius: 50%;
-    margin-top: 1em;
-}
-
-.fa-twitter {
-    background: black;
-    color: white;
-    border-radius: 50%;
-    margin-top: 1em;
-}
-
-
 .fa-linkedin {
     background: black;
     color: white;
     border-radius: 50%;
     margin-top: 1em;
+    border: 1px solid white;
 }
 
 .fa-google {
@@ -305,6 +577,7 @@ footer {
     color: white;
     border-radius: 50%;
     margin-top: 1em;
+    border: 1px solid white;
 }
 
 .align {
