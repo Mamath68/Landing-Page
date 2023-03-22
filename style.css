@@ -35,7 +35,6 @@ html {
             rgba(0, 0, 0, 0.5)), url("img/parallax.png")
 }
 
-
 .go_top {
     position: fixed;
     width: 50px;
@@ -55,6 +54,7 @@ html {
 }
 
 /* ********************NAVBAR**************************** */
+
 nav ul {
     padding: 2em;
     display: flex;
@@ -77,7 +77,7 @@ li a {
 .svg {
     width: 1.5%;
     height: 1.5%;
-    margin-top: 25px;
+    margin-top: 35px;
     margin-right: 20px;
 }
 
@@ -86,16 +86,20 @@ li a {
 }
 
 .bold {
-    font-weight: bold;
-    font-size: 30px;
-    margin-right: 50px;
-    list-style: none;
     margin-top: 20px;
+    font-weight: bold;
+    font-size: 40px;
+    list-style: none;
 }
 
 
 /* ***************DIV Principales*********************** */
-.flex {
+.flexheader {
+    display: flex;
+    justify-content: center;
+}
+
+.flexfeature {
     display: flex;
     justify-content: center;
 }
@@ -132,10 +136,10 @@ input {
     color: white;
     border-radius: 20px;
     padding: 10px;
+    border: 1px solid #1294B8;
 }
 
 .subscribe:hover {
-    box-shadow: 0px 2px 10px 5px;
     color: white;
     transition: 0.3s;
     transform: scale(1.1);
@@ -164,6 +168,17 @@ input {
 }
 
 /* ******************* Product Features********************** */
+.h2feature {
+    margin-top: 3em;
+    text-align: center;
+}
+
+.pfeature {
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 5em;
+    color: silver;
+}
 
 .icons {
     margin-top: 80px;
@@ -192,6 +207,12 @@ input {
 .container {
     margin-top: 10px;
     padding: 2px 16px;
+    text-align: center;
+}
+
+.h2work {
+    padding-top: 5em;
+    margin-bottom: 0.5em;
     text-align: center;
 }
 
@@ -314,6 +335,10 @@ h4 {
     color: white;
 }
 
+.kucrapad {
+    padding: 5em;
+}
+
 /* ***********************Client***************************** */
 .pstyle {
     margin-top: 1.5em;
@@ -412,9 +437,10 @@ h4 {
     color: blue;
 }
 
-.descender{
+.descender {
     margin-bottom: 30px;
 }
+
 .container2 {
     margin-top: 10px;
     padding: 2px 16px;
@@ -557,7 +583,8 @@ footer {
     padding: 20px;
     text-align: center;
     text-decoration: none;
-    margin: 5px 2px;
+    margin: 15px 2px;
+    color: white;
 }
 
 .fa:hover {

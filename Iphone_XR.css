@@ -1,43 +1,249 @@
 /* Smartphones (portrait) ----------- */
-@media only screen and (max-width : 414px) {
-    html {
-        scroll-behavior: smooth;
-    }
+@media only screen and (max-width : 415px) {
 
-    .header {
-        background: radial-gradient(rgb(139, 195, 245), #1294B8);
-        height: 100vh;
-    }
-
-    nav {
-        overflow: hidden;
-        position: relative;
-    }
-
-    nav #myLinks {
-        display: none;
-    }
-
-    nav a {
+    /* ****************Général****************************** */
+    .go_top {
+        position: fixed;
+        width: 50px;
+        height: 50px;
+        background: black;
+        bottom: 140px;
+        left: 40%;
+        text-align: center;
+        line-height: 55px;
         color: white;
-        padding: 14px 16px;
-        text-decoration: none;
-        font-size: 17px;
-        display: block;
+        font-size: 30px;
+        border-radius: 50%;
     }
 
-    nav a.icon {
-        display: block;
-        position: absolute;
-        right: 0;
-        top: 0;
+    /* ********************NAVBAR**************************** */
+
+
+
+    /* ***************DIV Principales*********************** */
+    .flexheader {
+        display: flex;
+        flex-direction: column;
     }
 
-    nav a:hover {
-        color: black;
+    .flexfeature {
+        display: flex;
+        flex-direction: row
     }
+
+    .reject {
+        margin-top: 0;
+    }
+
+    .queries {
+        margin: 21px 5px 0px 25px;
+        font-size: 15px;
+        width: 100%;
+    }
+
+    /* *************Div Zone Text + Bouton********************* */
+    .form {
+        background-color: aliceblue;
+        width: 45%;
+        border-radius: 40px;
+        margin: 47px 0 50px 0;
+        margin-left: 2.5%
+    }
+
+    .alignement {
+        margin-left: 7%;
+        font-size: 15px;
+        width: 100%;
+    }
+
+
+    input {
+        padding: 1em;
+        width: 73%;
+        border-style: hidden;
+        border-radius: 20px;
+    }
+
+    .subscribe {
+        background-color: #1294B8;
+        color: white;
+        border-radius: 20px;
+        padding: 10px;
+        border: 1px solid #1294B8
+    }
+
+    .subscribe:hover {
+        box-shadow: 0px 2px 10px 5px;
+        color: white;
+        transition: 0.3s;
+        transform: scale(1.1);
+        cursor: pointer;
+    }
+
+    .subscribe:focus {
+        outline: 0;
+    }
+
+    /* ***********************IMAGES******************* */
+    .bg {
+        background-image: url(img/illustration.svg);
+        background-repeat: no-repeat;
+        width: 400px;
+    }
+
+    .bg2 {
+        background-image: url(img/creativity.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        margin-top: 5%;
+        width: 500px;
+        height: 500px;
+    }
+
+    /* ******************* Product Features********************** */
+
+    .h2feature {
+        margin-top: 1em;
+    }
+
+    .pfeature {
+        margin-top: 1em;
+        margin-bottom: 5em;
+        color: silver;
+        font-size: 19px;
+    }
+
+    .icons {
+        margin-top: 45px;
+        font-size: 62px;
+        margin-bottom: 50px;
+    }
+
+    .card {
+        height: 580px;
+        margin-left: 1em
+    }
+
+    .card:hover {
+        transform: scale(1);
+    }
+
+    .container {
+        margin-top: 10px;
+        padding: 2px 16px;
+        font-size: 17px
+    }
+
+    h4 {
+        margin-bottom: 20px;
+    }
+
+    .h2work {
+        padding-top: 5em;
+        margin-bottom: 0.5em;
+        text-align: center;
+    }
+
+    .pwork {
+        font-size: 46px
+    }
+
+    /* ************************Dynamic********************* */
+
+    .team-member-container:hover .team-member-icons-container {
+        top: 25px;
+    }
+
+    .column {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .column2 {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 36px;
+    }
+
+    .team {
+        width: 105px;
+        height: 105px;
+    }
+
+    .team2 {
+        width: 105px;
+        height: 105px;
+    }
+
+    .svg2 {
+        width: 20px;
+        height: 20px;
+        display: flex;
+    }
+
+    .svg2:hover {
+        cursor: pointer;
+    }
+
+    .client {
+        margin-bottom: 0em;
+    }
+
+    .section {
+        text-align: center;
+        margin-top: 1em;
+        margin-bottom: 2em;
+        color: silver;
+    }
+
+    .descend {
+        margin-left: 0%;
+        width: 102%;
+        margin-top: 2em;
+    }
+
+    .decaller {
+        margin-left: 38px;
+    }
+
+    /**********************Kucra********************************* */
+    .kucrapad {
+        padding: 3em;
+    }
+
+    .getstarted {
+        margin-left: 35%;
+        margin-top: 40px;
+        width: 40%;
+    }
+
+    /* ***********************Client***************************** */
+    .pstyle {
+        margin-top: 1.5em;
+        margin-bottom: 2em;
+    }
+
+    .flex2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .figim {
+        width: 100px;
+        opacity: 0.5;
+        margin-top: 25px
+    }
+
+    /* **********************Creative*********************** */
+
+    /* ************************Pricing ************************* */
+
+    /* ***********************Blog**************************** */
+
+    /* ***********************Footer**************************** */
 }
 
-
 /* Smartphones (landscape) ----------- */
-@media only screen and (min-width : 898px) {}
+
+@media only screen and (min-width : 897px) {}
