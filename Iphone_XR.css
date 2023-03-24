@@ -16,11 +16,93 @@
         border-radius: 50%;
     }
 
+
     /* ********************NAVBAR**************************** */
+    #navprincipale {
+        display: none;
+    }
+    nav ul {
+        padding: 0em;
+        
+    }
+    .nav-bar {
+        display: block;
+        width: 50%;
+        background: radial-gradient(rgb(139, 195, 245), #1294B8);
+    }
 
+    /* nav Secondaire */
+    .nav-bar .site-logo {
+        font-size: 1.5rem;
+        flex-grow: 1;
+        text-align: center;
+        color: #1294B8;
+    }
 
+    .nav-bar #drop-down-cbox+label {
+        display: block;
+        /* unhide the mobile nav button */
+    }
+
+    .nav-bar .main-nav {
+        max-height: 0px;
+        /* same vertical grow transition trick as above */
+        height: calc(100vh - 60px);
+        /* take full vertical viewport height, -60px for nav-bar */
+        overflow: hidden;
+        position: absolute;
+        top: 60px;
+        line-height: auto;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background: radial-gradient(rgb(139, 195, 245), #1294B8);   transition: all 500ms ease-in-out;
+    }
+
+    #drop-down-cbox:checked~.main-nav {
+        max-height: calc(100vh - 60px);
+        transition: all 500ms ease-in-out;
+    }
+
+    .nav-bar .main-nav li span {
+        position: relative;
+    }
+
+    /* design and position downward arrow */
+    .nav-bar .main-nav li span:after {
+        content: "";
+        width: 6px;
+        height: 6px;
+        position: absolute;
+        top: 50%;
+        margin-top: -2px;
+        margin-left: 8px;
+        transform: translateY(-50%) rotate(-45deg);
+        border-left: 2px solid #666;
+        border-bottom: 2px solid #666;
+    }
+
+    .nav-bar .main-nav li a:hover,
+    .nav-bar .main-nav li span:hover {
+        color: white;
+        border-bottom: none;
+    }
+
+    .nav-bar .main-nav li>ul li {
+        position: relative;
+    }
+
+    .nav-bar .main-nav li>ul li a,
+    .nav-bar .main-nav li>ul li span {
+        background-color: #eee;
+    }
 
     /* ***************DIV Principales*********************** */
+    .header {
+        background: radial-gradient(rgb(139, 195, 245), #1294B8);
+        height: 80vh;
+    }
+
     .flexheader {
         display: flex;
         flex-direction: column;
@@ -28,11 +110,12 @@
 
     .flexfeature {
         display: flex;
-        flex-direction: row
+        flex-direction: column;
+        align-items: center;
     }
 
     .reject {
-        margin-top: 0;
+        margin-top: 100px;
     }
 
     .queries {
@@ -41,13 +124,29 @@
         width: 100%;
     }
 
+    .features {
+        height: 150vh;
+    }
+
+    .teams {
+        height: 160vh;
+    }
+
+    .pricing {
+        height: 180vh;
+    }
+
+    .blog {
+        height: 160vh;
+    }
+
     /* *************Div Zone Text + Bouton********************* */
     .form {
         background-color: aliceblue;
         width: 45%;
         border-radius: 40px;
         margin: 47px 0 50px 0;
-        margin-left: 2.5%
+        margin-left: 2.5%;
     }
 
     .alignement {
@@ -57,7 +156,7 @@
     }
 
 
-    input {
+    .input {
         padding: 1em;
         width: 73%;
         border-style: hidden;
@@ -69,48 +168,29 @@
         color: white;
         border-radius: 20px;
         padding: 10px;
-        border: 1px solid #1294B8
-    }
-
-    .subscribe:hover {
-        box-shadow: 0px 2px 10px 5px;
-        color: white;
-        transition: 0.3s;
-        transform: scale(1.1);
-        cursor: pointer;
-    }
-
-    .subscribe:focus {
-        outline: 0;
+        border: 1px solid #1294B8;
     }
 
     /* ***********************IMAGES******************* */
     .bg {
-        background-image: url(img/illustration.svg);
-        background-repeat: no-repeat;
         width: 400px;
+        margin-left: 8px;
     }
 
     .bg2 {
-        background-image: url(img/creativity.png);
-        background-repeat: no-repeat;
-        background-size: contain;
         margin-top: 5%;
-        width: 500px;
-        height: 500px;
+        width: 400px;
     }
 
     /* ******************* Product Features********************** */
 
     .h2feature {
-        margin-top: 1em;
+        margin: 1em;
     }
 
     .pfeature {
-        margin-top: 1em;
-        margin-bottom: 5em;
-        color: silver;
-        font-size: 19px;
+        margin: 2em;
+        font-size: 20px;
     }
 
     .icons {
@@ -120,8 +200,9 @@
     }
 
     .card {
-        height: 580px;
-        margin-left: 1em
+        height: 320px;
+        margin: 25px;
+        width: 350px;
     }
 
     .card:hover {
@@ -134,10 +215,6 @@
         font-size: 17px
     }
 
-    h4 {
-        margin-bottom: 20px;
-    }
-
     .h2work {
         padding-top: 5em;
         margin-bottom: 0.5em;
@@ -145,7 +222,7 @@
     }
 
     .pwork {
-        font-size: 46px
+        font-size: 46px;
     }
 
     /* ************************Dynamic********************* */
@@ -161,8 +238,10 @@
 
     .column2 {
         display: flex;
-        flex-direction: row;
-        margin-bottom: 36px;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 40px;
+
     }
 
     .team {
@@ -227,19 +306,172 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding-top: 0%
     }
 
     .figim {
         width: 100px;
         opacity: 0.5;
-        margin-top: 25px
+        margin-top: 25px;
     }
 
     /* **********************Creative*********************** */
+    .colonne {
+        display: flex;
+        flex-direction: column
+    }
+
+    .colonne2 {
+        margin-top: 10%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .learn {
+        margin: 10%;
+        margin-left: 30%
+    }
+
+    .divcreat {
+        padding-right: 0;
+    }
+
+    .h2creat {
+        text-align: center;
+        padding: 1.5em;
+        font-size: 20px
+    }
+
+    .pcreat {
+        text-align: center;
+        margin: 0.5em
+    }
 
     /* ************************Pricing ************************* */
+    .colonne3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card2 {
+        width: 330px;
+        height: 400px;
+        margin: 15px
+    }
+
+    .card3 {
+        width: 330px;
+        height: 400px;
+        margin: 15px
+    }
+
+    .absolute {
+        top: -58px;
+        right: -240px
+    }
+
+    .descender {
+        margin: 6px 10px 0px 0px
+    }
+
+    .container2 {
+        margin-top: 0px;
+        padding: 0px 15px;
+    }
+
+    .join {
+        margin-left: 15px;
+        margin-top: 40px;
+        padding: 20px;
+        width: 85%;
+    }
+
+    .join2 {
+        margin-left: 15px;
+        margin-top: 20px;
+        padding: 20px;
+        width: 85%;
+    }
+
+    .Separated {
+        margin: 10px 0 10px 0;
+    }
+
+    .baissermoin {
+        padding: 40px;
+        font-size: 20px
+    }
+
+    .divflex {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row
+    }
+
+    .divcolumn {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .divmarg {
+        margin: -55px 0 0 0
+    }
 
     /* ***********************Blog**************************** */
+
+    .team-member-container2 {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .column3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center
+    }
+
+    .column4 {
+        display: flex;
+        flex-direction: column;
+        margin-right: 0px;
+    }
+
+    .team-member-icons-container2 {
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        visibility: hidden;
+    }
+
+    .team3 {
+        width: 300px;
+        height: 200px;
+        margin: 0;
+        padding: 0;
+        filter: none;
+    }
+
+    .team4 {
+        width: 300px;
+        height: 200px;
+        margin-left: 20px;
+    }
+
+    .svg3 {
+        display: flex;
+    }
+
+    .client2 {
+        margin-top: 20px;
+    }
+
+    .Read {
+        color: blue;
+        border-style: none;
+        background: none;
+        margin-bottom: 30px;
+    }
 
     /* ***********************Footer**************************** */
 }
