@@ -1,47 +1,1122 @@
-/* iPads (portrait) ----------- */
-@media only screen and (min-device-width : 820px) and (max-device-width : 1080px) and (orientation : portrait) {
+/* Ipad Air (portrait) ----------- */
+
+@media only screen and (device-width : 820px) and (device-height : 1180px) and (-webkit-min-device-pixel-ratio: 1.0) {
 
     /* ****************Général****************************** */
-    html {
-        scroll-behavior: smooth;
+    .header {
+        height: 96vh;
     }
 
-    .header {
-        background: radial-gradient(rgb(139, 195, 245), #1294B8);
+    .features {
+        height: 135vh;
+    }
+
+    .works {
         height: 100vh;
     }
 
-    nav {
-        overflow: hidden;
-        position: relative;
+    .teams {
+        height: 170vh;
     }
 
-    nav #myLinks {
+    .kucra {
+        height: 50vh;
+    }
+
+    .faq {
+        height: 100vh;
+    }
+
+    .about {
+        height: 110vh;
+    }
+
+    .pricing {
+        height: 155vh;
+
+    }
+
+    .blog {
+        height: 140vh;
+    }
+
+    .grey {
+        color: grey;
+    }
+
+    .go_top {
+        bottom: 280px;
+        right: 220px;
+    }
+
+    .center {
+        text-align: center;
+    }
+
+    .logos {
         display: none;
     }
 
-    nav a {
-        color: white;
-        padding: 14px 16px;
-        text-decoration: none;
-        font-size: 17px;
-        display: block;
+    /* ********************NAVBAR**************************** */
+    #navprincipale {
+        display: none;
     }
 
-    nav a.icon {
+    nav ul {
+        padding: 0em;
+
+    }
+
+    /************** nav Secondaire *******/
+    .nav-bar {
         display: block;
+        width: 100%;
+        background: radial-gradient(rgb(139, 195, 245), #1294B8);
+    }
+
+    .nav-bar .site-logo {
+        font-size: 3rem;
+        flex-grow: 1;
+        text-align: center;
+        color: #1294B8;
+    }
+
+    .nav-bar #drop-down-cbox+label {
+        display: block;
+        /* unhide the mobile nav button */
+    }
+
+    .nav-bar .main-nav {
+        max-height: 0px;
+        /* same vertical grow transition trick as above */
+        height: calc(100vh - 60px);
+        /* take full vertical viewport height, -60px for nav-bar */
+        overflow: hidden;
         position: absolute;
-        right: 0;
-        top: 0;
+        top: 60px;
+        line-height: auto;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background: radial-gradient(rgb(139, 195, 245), #1294B8);
+        transition: all 500ms ease-in-out;
     }
 
-    nav a:hover {
+    #drop-down-cbox:checked~.main-nav {
+        max-height: calc(100vh - 60px);
+        transition: all 500ms ease-in-out;
+    }
+
+    .nav-bar .main-nav li span {
+        position: relative;
+    }
+
+    /* design and position downward arrow */
+    .nav-bar .main-nav li span:after {
+        content: "";
+        width: 6px;
+        height: 6px;
+        position: absolute;
+        top: 50%;
+        margin-top: -2px;
+        margin-left: 8px;
+        transform: translateY(-50%) rotate(-45deg);
+        border-left: 2px solid #666;
+        border-bottom: 2px solid #666;
+    }
+
+    .nav-bar .main-nav li>ul li {
+        position: relative;
+    }
+
+    .nav-bar .main-nav li>ul li a,
+    .nav-bar .main-nav li>ul li span {
+        background-color: #eee;
+    }
+
+    .nav-bar .main-nav li {
+        line-height: 60px;
+        font-size: 30px;
+    }
+
+    /* ***************DIV Principales*********************** */
+    .flexheader {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 7%;
+    }
+
+    .flexfeature {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .reject {
+        margin-top: 2em;
+        margin-right: -17em;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .queries {
+        margin: 15px 23% 25px -60px;
+        font-size: 25px;
+    }
+
+    /* *************Div Zone Text + Bouton********************* */
+    .form {
+        background-color: white;
+        width: 80%;
+        border-radius: 40px;
+        margin-top: 68px;
+        margin-left: -1.5em;
+        margin-bottom: 10%;
+    }
+
+    .alignement {
+        width: 70%;
+    }
+
+    .input {
+        padding: 2em;
+        width: 78%;
+        border-style: hidden;
+        border-radius: 20px;
+        font-size: 20px;
+    }
+
+    .subscribe {
+        background-color: #1294B8;
+        color: white;
+        border-radius: 30px;
+        padding: 20px;
+        border: 1px solid #1294B8;
+        font-size: 20px;
+    }
+
+    .subscribe:hover {
+        color: white;
+        transition: 0.3s;
+        transform: scale(1.1);
+        cursor: pointer;
+    }
+
+    .subscribe:focus {
+        outline: 0;
+    }
+
+    /***********************Image****************************** */
+    .bg {
+        width: 560px;
+    }
+
+    .bg2 {
+        margin-top: 0;
+        width: 400px;
+    }
+
+    /* ******************* Product Features********************** */
+
+    .h2feature {
+        margin: 1em;
+        font-size: 40px;
+    }
+
+    .pfeature {
+        margin: 2em;
+        font-size: 30px;
+    }
+
+    .icons {
+        margin-top: 45px;
+        font-size: 62px;
+        margin-bottom: 50px;
+    }
+
+    .card {
+        height: 390px;
+        width: 410px;
+        margin: 10px;
+    }
+
+    .container {
+        font-size: 24px;
+    }
+
+    .h2work {
+
+        margin-bottom: 8em;
+        font-size: 40px;
+    }
+
+    .pwork {
+        font-size: 46px;
+    }
+
+    /* ************************Dynamic********************* */
+    .team-member .team .team2 {
+        filter: grayscale(100%);
+        transition: .3s ease-in-out;
+    }
+
+    .team-member-container:hover .team .team2 {
+        filter: grayscale(0);
+        transform: scale(1.1);
+    }
+
+    .team-member-container {
+        position: relative;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+
+    .team-member-container:hover .team-member-icons-container {
+        top: 60px;
+        left: 8px;
+        visibility: visible;
+    }
+
+    .column {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .column2 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .team-member-icons-container {
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        transition: all 1s ease-in-out;
+        visibility: hidden;
+    }
+
+    .team {
+        width: 195px;
+        height: 195px;
+        margin: 0;
+        padding: 0;
+        border-radius: 50%;
+    }
+
+    .team2 {
+        width: 195px;
+        height: 195px;
+        border-radius: 50%;
+    }
+
+    .svg2 {
+        width: 20px;
+        height: 20px;
+        display: flex;
+    }
+
+    .svg2:hover {
+        cursor: pointer;
+    }
+
+    .client {
+        text-align: center;
+        color: gray;
+        margin-bottom: 2em;
+        font-size: 20px;
+    }
+
+    .margtop {
+        text-align: center;
+        margin-top: 15px;
+        font-size: 30px;
+        margin-bottom: 15px;
+    }
+
+    .section {
+        margin-bottom: 2em;
+        font-size: 20px;
+    }
+
+    .descend {
+        margin-left: 15%;
+        width: 74%;
+        margin-top: 2em;
+    }
+
+    /**********************Kucra********************************* */
+    .getstarted {
+        margin-left: 30%;
+        margin-top: 100px;
+        border-radius: 20px;
+        padding: 30px;
+        width: 40%;
+    }
+
+    .getstarted:hover {
+        background-color: white;
         color: black;
+        transition: 0.3s;
+        transform: scale(1.1);
+        cursor: pointer;
+    }
+
+    .white {
+        text-align: center;
+        color: white;
+        margin-top: 40px;
+    }
+
+    .kucrapad {
+        padding: 5em;
+    }
+
+    /* ***********************Client***************************** */
+    .padtop {
+        padding-top: 2em;
+    }
+
+    .pstyle {
+        margin-top: 1.5em;
+        margin-bottom: 2em;
+        font-size: 25px;
+    }
+
+    .flex2 {
+        display: flex;
+        padding-top: 2%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .figim {
+        width: 146px;
+        margin-bottom: 8%;
+        opacity: 0.5;
+    }
+
+    /* **********************Creative*********************** */
+    .colonne {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .colonne2 {
+        margin-top: 10%;
+        display: flex;
+        justify-content: center;
+        font-size: 30px;
+
+    }
+
+    .learn {
+        border-radius: 20px;
+        margin-top: 10%;
+        padding: 20px;
+        width: 50%;
+        margin-left: 25%;
+    }
+
+    .marright {
+        margin-right: 20px;
+        text-align: center;
+    }
+
+    .marleft {
+        margin-left: 60px;
+        text-align: center;
+    }
+
+    .divcreat {
+        padding: 10%;
+    }
+
+    .h2creat {
+        text-align: center;
+        padding-bottom: 3em;
+    }
+
+    .pcreat {
+        text-align: center;
+        color: grey;
+        font-size: 30px;
+    }
+
+
+    /* ************************Pricing ************************* */
+    .colonne3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card2 {
+        width: 400px;
+        height: 460px;
+        margin-top: 30px;
+        margin-right: 0;
+    }
+
+    .card3 {
+        width: 400px;
+        height: 460px;
+        margin-top: 30px;
+        margin-right: 0;
+    }
+
+    .absolute {
+        padding: 1em;
+        width: 32%;
+        top: -92px;
+        right: -268px;
+    }
+
+    .descender {
+        margin-bottom: 30px;
+    }
+
+
+    .baisser {
+        padding: 40px;
+        font-size: 50px;
+    }
+
+    .baissermoin {
+        padding: 30px;
+        font-size: 25px;
+    }
+
+    /* ***********************Blog**************************** */
+    .team-member2 .team3 .team2 {
+        transition: .3s;
+    }
+
+    .team-member-container2:hover .team3 .team4 {
+        filter: brightness(50%);
+    }
+
+    .team-member-container2 {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .team-member-container2:hover .team-member-icons-container2 {
+        top: 20px;
+        left: 25px;
+        visibility: visible;
+        color: white;
+        font-size: 15px;
+    }
+
+    .column3 {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .column4 {
+        display: flex;
+        flex-direction: column;
+        margin-right: 20px;
+    }
+
+    .team-member-icons-container2 {
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        visibility: hidden;
+    }
+
+    .team3 {
+        width: 400px;
+        height: 300px;
+        margin: 0;
+        padding: 0;
+        filter: none;
+    }
+
+    .team4 {
+        width: 400px;
+        height: 300px;
+    }
+
+    .svg3 {
+        display: flex;
+    }
+
+    .svg3:hover {
+        cursor: pointer;
+    }
+
+    .client2 {
+        margin-top: 20px;
+    }
+
+    .Read {
+        color: blue;
+        border-style: none;
+        background: none;
+    }
+
+    /* ***********************Footer**************************** */
+
+    footer {
+        padding: 3em;
+        height: 27vh;
+    }
+
+    .align {
+        padding: 2em;
+        display: flex;
+        justify-content: center;
+        list-style: none;
+    }
+
+    li {
+        color: white;
+        font-size: 21px;
+    }
+
+    small {
+        color: white;
+        margin-bottom: 2em;
+        font-size: 20px;
     }
 }
 
-/* iPads (landscape) ----------- */
-/* 
-@media only screen and (min-device-width : 1080px) and (max-device-width : 820px) and (orientation : landscape) {
+/* Ipad air (landscape) ----------- */
+@media only screen and (device-width :1180px) and (device-height : 820px) and (-webkit-device-pixel-ratio : 2) {
 
-} */
+    /* ****************Général****************************** */
+    .header {
+        height: 150vh;
+    }
+
+    .features {
+        height: 185vh;
+    }
+
+    .works {
+        height: 100vh;
+    }
+
+    .teams {
+        height: 245vh;
+    }
+
+    .kucra {
+        height: 60vh;
+    }
+
+    .faq {
+        height: 160vh;
+    }
+
+    .about {
+        height: 160vh;
+    }
+
+    .pricing {
+        height: 220vh;
+
+    }
+
+    .blog {
+        height: 200vh;
+    }
+
+    .grey {
+        color: grey;
+    }
+
+    .go_top {
+        bottom: 20px;
+        right: 30px
+    }
+
+    .center {
+        text-align: center;
+    }
+
+    .logos {
+        display: flex;
+    }
+
+    .svg {
+        margin-top: -30px;
+    }
+
+    /* ********************NAVBAR**************************** */
+    #navprincipale {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        padding: 0em;
+
+    }
+
+    /************** nav Secondaire *******/
+    .nav-bar {
+        display: none;
+    }
+
+    /* ***************DIV Principales*********************** */
+    .flexheader {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 0%;
+    }
+
+    .flexfeature {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .reject {
+        margin-top: 2em;
+        margin-right: -17em;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .queries {
+        margin: 15px 23% 25px -60px;
+        font-size: 25px;
+    }
+
+    /* *************Div Zone Text + Bouton********************* */
+    .form {
+        background-color: white;
+        width: 80%;
+        border-radius: 40px;
+        margin-top: 68px;
+        margin-left: -1.5em;
+        margin-bottom: 10%;
+    }
+
+    .alignement {
+        width: 70%;
+    }
+
+    .input {
+        padding: 2em;
+        width: 78%;
+        border-style: hidden;
+        border-radius: 20px;
+        font-size: 20px;
+    }
+
+    .subscribe {
+        background-color: #1294B8;
+        color: white;
+        border-radius: 30px;
+        padding: 20px;
+        border: 1px solid #1294B8;
+        font-size: 20px;
+    }
+
+    .subscribe:hover {
+        color: white;
+        transition: 0.3s;
+        transform: scale(1.1);
+        cursor: pointer;
+    }
+
+    .subscribe:focus {
+        outline: 0;
+    }
+
+    /***********************Image****************************** */
+    .bg {
+        width: 560px;
+    }
+
+    .bg2 {
+        margin-top: 0;
+        width: 400px;
+    }
+
+    /* ******************* Product Features********************** */
+
+    .h2feature {
+        margin: 1em;
+        font-size: 40px;
+    }
+
+    .pfeature {
+        margin: 2em;
+        font-size: 30px;
+    }
+
+    .icons {
+        margin-top: 45px;
+        font-size: 62px;
+        margin-bottom: 50px;
+    }
+
+    .card {
+        height: 390px;
+        width: 410px;
+        margin: 10px;
+    }
+
+    .container {
+        font-size: 24px;
+    }
+
+    .h2work {
+
+        margin-bottom: 2em;
+        font-size: 40px;
+    }
+
+    .pwork {
+        font-size: 46px;
+        padding: 2em;
+    }
+
+    /* ************************Dynamic********************* */
+    .team-member .team .team2 {
+        filter: grayscale(100%);
+        transition: .3s ease-in-out;
+    }
+
+    .team-member-container:hover .team .team2 {
+        filter: grayscale(0);
+        transform: scale(1.1);
+    }
+
+    .team-member-container {
+        position: relative;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+
+    .team-member-container:hover .team-member-icons-container {
+        top: 60px;
+        left: 8px;
+        visibility: visible;
+    }
+
+    .column {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .column2 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .team-member-icons-container {
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        transition: all 1s ease-in-out;
+        visibility: hidden;
+    }
+
+    .team {
+        width: 195px;
+        height: 195px;
+        margin: 0;
+        padding: 0;
+        border-radius: 50%;
+    }
+
+    .team2 {
+        width: 195px;
+        height: 195px;
+        border-radius: 50%;
+    }
+
+    .svg2 {
+        width: 20px;
+        height: 20px;
+        display: flex;
+    }
+
+    .svg2:hover {
+        cursor: pointer;
+    }
+
+    .client {
+        text-align: center;
+        color: gray;
+        margin-bottom: 2em;
+        font-size: 20px;
+    }
+
+    .margtop {
+        text-align: center;
+        margin-top: 15px;
+        font-size: 30px;
+        margin-bottom: 15px;
+    }
+
+    .section {
+        margin-bottom: 2em;
+        font-size: 20px;
+    }
+
+    .descend {
+        margin-left: 15%;
+        width: 74%;
+        margin-top: 2em;
+    }
+
+    /**********************Kucra********************************* */
+    .getstarted {
+        margin-left: 30%;
+        margin-top: 100px;
+        border-radius: 20px;
+        padding: 30px;
+        width: 40%;
+    }
+
+    .getstarted:hover {
+        background-color: white;
+        color: black;
+        transition: 0.3s;
+        transform: scale(1.1);
+        cursor: pointer;
+    }
+
+    .white {
+        text-align: center;
+        color: white;
+        margin-top: 40px;
+    }
+
+    .kucrapad {
+        padding: 5em;
+    }
+
+    /* ***********************Client***************************** */
+    .padtop {
+        padding-top: 2em;
+    }
+
+    .pstyle {
+        margin-top: 1.5em;
+        margin-bottom: 2em;
+        font-size: 25px;
+    }
+
+    .flex2 {
+        display: flex;
+        padding-top: 2%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .figim {
+        width: 146px;
+        margin-bottom: 8%;
+        opacity: 0.5;
+    }
+
+    /* **********************Creative*********************** */
+    .colonne {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .colonne2 {
+        margin-top: 10%;
+        display: flex;
+        justify-content: center;
+        font-size: 30px;
+
+    }
+
+    .learn {
+        border-radius: 20px;
+        margin-top: 10%;
+        padding: 20px;
+        width: 50%;
+        margin-left: 25%;
+    }
+
+    .marright {
+        margin-right: 20px;
+        text-align: center;
+    }
+
+    .marleft {
+        margin-left: 60px;
+        text-align: center;
+    }
+
+    .divcreat {
+        padding: 10%;
+    }
+
+    .h2creat {
+        text-align: center;
+        padding-bottom: 3em;
+    }
+
+    .pcreat {
+        text-align: center;
+        color: grey;
+        font-size: 30px;
+    }
+
+
+    /* ************************Pricing ************************* */
+    .colonne3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card2 {
+        width: 400px;
+        height: 460px;
+        margin-top: 30px;
+        margin-right: 0;
+    }
+
+    .card3 {
+        width: 400px;
+        height: 460px;
+        margin-top: 30px;
+        margin-right: 0;
+    }
+
+    .absolute {
+        padding: 1em;
+        width: 32%;
+        top: -92px;
+        right: -268px;
+    }
+
+    .descender {
+        margin-bottom: 30px;
+    }
+
+
+    .baisser {
+        padding: 40px;
+        font-size: 50px;
+    }
+
+    .baissermoin {
+        padding: 30px;
+        font-size: 25px;
+    }
+
+    /* ***********************Blog**************************** */
+    .team-member2 .team3 .team2 {
+        transition: .3s;
+    }
+
+    .team-member-container2:hover .team3 .team4 {
+        filter: brightness(50%);
+    }
+
+    .team-member-container2 {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .team-member-container2:hover .team-member-icons-container2 {
+        top: 20px;
+        left: 25px;
+        visibility: visible;
+        color: white;
+        font-size: 15px;
+    }
+
+    .column3 {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .column4 {
+        display: flex;
+        flex-direction: column;
+        margin-right: 20px;
+    }
+
+    .team-member-icons-container2 {
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        visibility: hidden;
+    }
+
+    .team3 {
+        width: 400px;
+        height: 300px;
+        margin: 0;
+        padding: 0;
+        filter: none;
+    }
+
+    .team4 {
+        width: 400px;
+        height: 300px;
+    }
+
+    .svg3 {
+        display: flex;
+    }
+
+    .svg3:hover {
+        cursor: pointer;
+    }
+
+    .client2 {
+        margin-top: 20px;
+    }
+
+    .Read {
+        color: blue;
+        border-style: none;
+        background: none;
+    }
+
+    /* ***********************Footer**************************** */
+
+    footer {
+        padding: 3em;
+        height: 40vh;
+    }
+
+    .align {
+        padding: 2em;
+        display: flex;
+        justify-content: center;
+        list-style: none;
+    }
+
+    li {
+        color: white;
+        font-size: 21px;
+    }
+
+    small {
+        color: white;
+        margin-bottom: 2em;
+        font-size: 20px;
+    }
+}

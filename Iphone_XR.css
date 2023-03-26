@@ -20,7 +20,7 @@
     /************** nav Secondaire *******/
     .nav-bar {
         display: block;
-        width: 48%;
+        width: 100%;
         background: radial-gradient(rgb(139, 195, 245), #1294B8);
     }
 
@@ -53,7 +53,8 @@
     }
 
     #drop-down-cbox:checked~.main-nav {
-        max-height: calc(80vh - 60px);
+        max-height: calc(100vh - 60px);
+        font-size: 20px;
         transition: all 500ms ease-in-out;
     }
 
@@ -86,8 +87,7 @@
 
     /* ***************DIV Principales*********************** */
     .header {
-        background: radial-gradient(rgb(139, 195, 245), #1294B8);
-        height: 80vh;
+        height: 100vh;
     }
 
     .flexheader {
@@ -115,6 +115,10 @@
         height: 150vh;
     }
 
+    .works {
+        height: 100vh;
+    }
+
     .teams {
         height: 160vh;
     }
@@ -123,25 +127,25 @@
         height: 180vh;
     }
 
+    .faq {
+        height: 105vh;
+    }
+
     .blog {
         height: 160vh;
     }
 
     /* *************Div Zone Text + Bouton********************* */
     .form {
-        background-color: aliceblue;
         width: 45%;
         border-radius: 40px;
-        margin: 47px 0 50px 0;
-        margin-left: 2.5%;
+        margin: 15% 0 15% 2.5%;
     }
 
     .alignement {
-        margin-left: 7%;
-        font-size: 15px;
-        width: 100%;
+        margin-left: 2%;
+        font-size: 20px;
     }
-
 
     .input {
         padding: 1em;
@@ -255,10 +259,11 @@
         margin-left: 0%;
         width: 102%;
         margin-top: 2em;
+        padding: 15px;
     }
 
-    .decaller {
-        margin-left: 38px;
+    .team-member-container:hover .team-member-icons-container {
+        top: 30px;
     }
 
     /**********************Kucra********************************* */
@@ -284,6 +289,7 @@
     .pstyle {
         margin-top: 1.5em;
         margin-bottom: 2em;
+        padding: 1em;
     }
 
     .flex2 {
@@ -309,6 +315,7 @@
         margin-top: 10%;
         display: flex;
         justify-content: center;
+        text-align: center;
     }
 
     .learn {
@@ -457,10 +464,10 @@
         margin-bottom: 30px;
     }
 
+    /* *******************Footer************** */
     footer {
         background-color: black;
         text-align: center;
-        margin-bottom: 49%;
     }
 
     .align {
@@ -514,10 +521,42 @@
     }
 
     /* ***************DIV Principales*********************** */
-
     .header {
         height: 110vh;
         width: 217vh;
+    }
+
+    .features {
+        height: 126vh;
+    }
+
+    .works {
+        height: 100vh;
+    }
+
+    .teams {
+        height: 145vh;
+    }
+
+    .kucra {
+        height: 50vh;
+    }
+
+    .faq {
+        height: 100vh;
+    }
+
+    .about {
+        height: 200vh;
+    }
+
+    .pricing {
+        height: 160vh;
+
+    }
+
+    .blog {
+        height: 310vh;
     }
 
     .flexheader {
@@ -540,37 +579,6 @@
     .queries {
         margin: 20px 5px 20px 30px;
         font-size: 20px;
-    }
-
-    .height100vh {
-        height: 200vh;
-        width: 217vh;
-    }
-
-    .features {
-        height: 135vh;
-        width: 217vh;
-    }
-
-    .teams {
-        height: 160vh;
-        width: 217vh;
-    }
-
-    .pricing {
-        height: 160vh;
-        width: 217vh;
-        background-color: rgb(220, 220, 220);
-    }
-
-    .blog {
-        height: 310vh;
-        width: 217vh;
-    }
-
-    .works {
-        height: 100vh;
-        width: 217vh;
     }
 
     /* *************Div Zone Text + Bouton********************* */
