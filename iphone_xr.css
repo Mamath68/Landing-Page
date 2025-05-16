@@ -1,6 +1,6 @@
 /* Smartphones (portrait) ----------- */
 
-@media only screen and (device-width : 414px) and (device-height : 896px) and (-webkit-device-pixel-ratio : 2) {
+@media (min-width: 414px) and (max-width: 896px) and (orientation: portrait) {
 
     /* ****************Général****************************** */
     .logos {
@@ -12,9 +12,10 @@
         display: none;
     }
 
-    nav ul {
-        padding: 0em;
-
+    nav {
+        & ul {
+            padding: 0;
+        }
     }
 
     /************** nav Secondaire *******/
@@ -22,67 +23,74 @@
         display: block;
         width: 100%;
         background: radial-gradient(rgb(139, 195, 245), #1294B8);
-    }
 
-    .nav-bar .site-logo {
-        font-size: 1.5rem;
-        flex-grow: 1;
-        text-align: center;
-        color: #1294B8;
-    }
+        & .site-logo {
+            font-size: 1.5rem;
+            flex-grow: 1;
+            text-align: center;
+            color: #1294B8;
+        }
 
-    .nav-bar #drop-down-cbox+label {
-        display: block;
-        /* unhide the mobile nav button */
-    }
+        & #drop-down-cbox {
+            & + label {
+                display: block;
+            }
 
-    .nav-bar .main-nav {
-        max-height: 0px;
-        /* same vertical grow transition trick as above */
-        height: calc(100vh - 60px);
-        /* take full vertical viewport height, -60px for nav-bar */
-        overflow: hidden;
-        position: absolute;
-        top: 60px;
-        line-height: auto;
-        left: 0;
-        width: 100%;
-        flex-direction: column;
-        background: radial-gradient(rgb(139, 195, 245), #1294B8);
-        transition: all 500ms ease-in-out;
-    }
+            &:checked {
+                & ~ .main-nav {
+                    max-height: calc(100vh - 60px);
+                    font-size: 20px;
+                    transition: all 500ms ease-in-out;
+                }
+            }
+        }
 
-    #drop-down-cbox:checked~.main-nav {
-        max-height: calc(100vh - 60px);
-        font-size: 20px;
-        transition: all 500ms ease-in-out;
-    }
+        & .main-nav {
+            max-height: 0;
+            height: calc(100vh - 60px);
+            overflow: hidden;
+            position: absolute;
+            top: 60px;
+            line-height: 1;
+            left: 0;
+            width: 100%;
+            flex-direction: column;
+            background: radial-gradient(rgb(139, 195, 245), #1294B8);
+            transition: all 500ms ease-in-out;
 
-    .nav-bar .main-nav li span {
-        position: relative;
-    }
+            & li {
+                & span {
+                    position: relative;
 
-    /* design and position downward arrow */
-    .nav-bar .main-nav li span:after {
-        content: "";
-        width: 6px;
-        height: 6px;
-        position: absolute;
-        top: 50%;
-        margin-top: -2px;
-        margin-left: 8px;
-        transform: translateY(-50%) rotate(-45deg);
-        border-left: 2px solid #666;
-        border-bottom: 2px solid #666;
-    }
+                    &:after {
+                        content: "";
+                        width: 6px;
+                        height: 6px;
+                        position: absolute;
+                        top: 50%;
+                        margin-top: -2px;
+                        margin-left: 8px;
+                        transform: translateY(-50%) rotate(-45deg);
+                        border-left: 2px solid #666;
+                        border-bottom: 2px solid #666;
+                    }
+                }
 
-    .nav-bar .main-nav li>ul li {
-        position: relative;
-    }
+                & > ul {
+                    & li {
+                        position: relative;
 
-    .nav-bar .main-nav li>ul li a,
-    .nav-bar .main-nav li>ul li span {
-        background-color: #eee;
+                        & a {
+                            background-color: #eee;
+                        }
+
+                        & span {
+                            background-color: #eee;
+                        }
+                    }
+                }
+            }
+        }
     }
 
     /* ***************DIV Principales*********************** */
@@ -106,7 +114,7 @@
     }
 
     .queries {
-        margin: 21px 5px 0px 25px;
+        margin: 21px 5px 0 25px;
         font-size: 15px;
         width: 100%;
     }
@@ -174,7 +182,6 @@
     }
 
     /* ******************* Product Features********************** */
-
     .h2feature {
         margin: 1em;
     }
@@ -213,7 +220,6 @@
     }
 
     /* ************************Dynamic********************* */
-
     .column {
         display: flex;
         flex-direction: column;
@@ -243,9 +249,8 @@
         display: flex;
     }
 
-
     .client {
-        margin-bottom: 0em;
+        margin-bottom: 0;
     }
 
     .section {
@@ -256,14 +261,18 @@
     }
 
     .descend {
-        margin-left: 0%;
+        margin-left: 0;
         width: 102%;
         margin-top: 2em;
         padding: 15px;
     }
 
-    .team-member-container:hover .team-member-icons-container {
-        top: 30px;
+    .team-member-container {
+        &:hover {
+            & .team-member-icons-container {
+                top: 30px;
+            }
+        }
     }
 
     /**********************Kucra********************************* */
@@ -275,15 +284,16 @@
         margin-left: 35%;
         margin-top: 40px;
         width: 40%;
+
+        &:hover {
+            background-color: white;
+            color: black;
+            transition: 0.3s;
+            transform: scale(1.1);
+            cursor: pointer;
+        }
     }
 
-    .getstarted:hover {
-        background-color: white;
-        color: black;
-        transition: 0.3s;
-        transform: scale(1.1);
-        cursor: pointer;
-    }
 
     /* ***********************Client***************************** */
     .pstyle {
@@ -296,7 +306,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding-top: 0%
+        padding-top: 0
     }
 
     .figim {
@@ -319,8 +329,7 @@
     }
 
     .learn {
-        margin: 10%;
-        margin-left: 30%
+        margin: 10% 10% 10% 30%;
     }
 
     .divcreat {
@@ -363,12 +372,12 @@
     }
 
     .descender {
-        margin: 6px 10px 0px 0px
+        margin: 6px 10px 0 0;
     }
 
     .container2 {
-        margin-top: 0px;
-        padding: 0px 15px;
+        margin-top: 0;
+        padding: 0 15px;
     }
 
     .join {
@@ -410,7 +419,6 @@
     }
 
     /* ***********************Blog**************************** */
-
     .team-member-container2 {
         position: relative;
         overflow: hidden;
@@ -425,7 +433,7 @@
     .column4 {
         display: flex;
         flex-direction: column;
-        margin-right: 0px;
+        margin-right: 0;
     }
 
     .team-member-icons-container2 {
@@ -474,11 +482,16 @@
         font-size: 11px;
         font-weight: bold;
     }
+
+    .go_top {
+        bottom: 15%;
+        left: 42%;
+    }
 }
 
 
 /* Smartphones (landscape) ----------- */
-@media only screen and (device-width : 896px) and (device-height : 414px) and (-webkit-device-pixel-ratio : 2) {
+@media (max-width: 896px) and (orientation: landscape) {
     .go_top {
         bottom: 10px;
         left: 90%;
@@ -487,7 +500,7 @@
     .logos {
         display: flex;
         margin-left: 40%;
-        margin-bottom: 0px;
+        margin-bottom: 0;
     }
 
     /* ********************NAVBAR**************************** */
@@ -496,10 +509,12 @@
         margin-top: -20px;
     }
 
-    nav ul {
-        padding: 0em;
-        margin-bottom: 15px;
-        font-size: 17px;
+    nav {
+        & ul {
+            padding: 0;
+            margin-bottom: 15px;
+            font-size: 17px;
+        }
     }
 
     li {
@@ -507,7 +522,7 @@
     }
 
     .svg {
-        margin: 0px 20px 0px 30px;
+        margin: 0 20px 0 30px;
     }
 
     .bold {
@@ -617,14 +632,13 @@
     }
 
     /* ******************* Product Features********************** */
-
     .h2feature {
         margin: 1em;
         font-size: 25px;
     }
 
     .pfeature {
-        margin: 0em;
+        margin: 0;
         font-size: 25px;
     }
 
@@ -636,14 +650,14 @@
 
     .container {
         margin-top: 10px;
-        padding: 0px 15px;
+        padding: 0 15px;
         font-size: 20px;
     }
 
     .icons {
         margin-top: 30px;
         font-size: 50px;
-        margin-bottom: 0px;
+        margin-bottom: 0;
     }
 
     .pwork {
@@ -659,11 +673,14 @@
     }
 
     /***************** Dynamic*************** */
-
-    .team-member-container:hover .team-member-icons-container {
-        top: 70px;
-        left: 8px;
-        visibility: visible;
+    .team-member-container {
+        &:hover {
+            & .team-member-icons-container {
+                top: 70px;
+                left: 8px;
+                visibility: visible;
+            }
+        }
     }
 
     .section {
@@ -671,7 +688,7 @@
     }
 
     .descend {
-        margin-left: 0%;
+        margin-left: 0;
         width: 95%;
         margin-top: 2em
     }
@@ -685,14 +702,14 @@
         margin-left: 35%;
         margin-top: 40px;
         width: 40%;
-    }
 
-    .getstarted:hover {
-        background-color: white;
-        color: black;
-        transition: 0.3s;
-        transform: scale(1.1);
-        cursor: pointer;
+        &:hover {
+            background-color: white;
+            color: black;
+            transition: 0.3s;
+            transform: scale(1.1);
+            cursor: pointer;
+        }
     }
 
     .kucra {
@@ -782,12 +799,12 @@
     }
 
     .descender {
-        margin: 6px 10px 0px 0px
+        margin: 6px 10px 0 0;
     }
 
     .container2 {
-        margin-top: 0px;
-        padding: 0px 15px;
+        margin-top: 0;
+        padding: 0 15px;
     }
 
     .join {
@@ -848,7 +865,7 @@
     .column4 {
         display: flex;
         flex-direction: column;
-        margin-right: 0px;
+        margin-right: 0;
     }
 
     .team-member-icons-container2 {

@@ -1,6 +1,6 @@
 /* Ipad Air (portrait) ----------- */
 
-@media only screen and (device-width : 820px) and (device-height : 1180px) and (-webkit-min-device-pixel-ratio: 1.0) {
+@media (min-width: 768px) and (max-width: 834px) and (orientation: portrait) {
 
     /* ****************Général****************************** */
     .header {
@@ -63,7 +63,7 @@
     }
 
     nav ul {
-        padding: 0em;
+        padding: 0;
 
     }
 
@@ -72,71 +72,76 @@
         display: block;
         width: 100%;
         background: radial-gradient(rgb(139, 195, 245), #1294B8);
-    }
 
-    .nav-bar .site-logo {
-        font-size: 3rem;
-        flex-grow: 1;
-        text-align: center;
-        color: #1294B8;
-    }
+        & .site-logo {
+            font-size: 3rem;
+            flex-grow: 1;
+            text-align: center;
+            color: #1294B8;
+        }
 
-    .nav-bar #drop-down-cbox+label {
-        display: block;
-        /* unhide the mobile nav button */
-    }
+        & #drop-down-cbox {
+            &:checked {
+                & ~ .main-nav {
+                    max-height: calc(100vh - 60px);
+                    transition: all 500ms ease-in-out;
+                }
+            }
 
-    .nav-bar .main-nav {
-        max-height: 0px;
-        /* same vertical grow transition trick as above */
-        height: calc(100vh - 60px);
-        /* take full vertical viewport height, -60px for nav-bar */
-        overflow: hidden;
-        position: absolute;
-        top: 60px;
-        line-height: auto;
-        left: 0;
-        width: 100%;
-        flex-direction: column;
-        background: radial-gradient(rgb(139, 195, 245), #1294B8);
-        transition: all 500ms ease-in-out;
-    }
+            & + label {
+                display: block;
+            }
+        }
 
-    #drop-down-cbox:checked~.main-nav {
-        max-height: calc(100vh - 60px);
-        transition: all 500ms ease-in-out;
-    }
+        & .main-nav {
+            max-height: 0;
+            height: calc(100vh - 60px);
+            overflow: hidden;
+            position: absolute;
+            top: 60px;
+            line-height: 1;
+            left: 0;
+            width: 100%;
+            flex-direction: column;
+            background: radial-gradient(rgb(139, 195, 245), #1294B8);
+            transition: all 500ms ease-in-out;
 
-    .nav-bar .main-nav li span {
-        position: relative;
-    }
+            & li {
+                line-height: 60px;
+                font-size: 30px;
 
-    /* design and position downward arrow */
-    .nav-bar .main-nav li span:after {
-        content: "";
-        width: 6px;
-        height: 6px;
-        position: absolute;
-        top: 50%;
-        margin-top: -2px;
-        margin-left: 8px;
-        transform: translateY(-50%) rotate(-45deg);
-        border-left: 2px solid #666;
-        border-bottom: 2px solid #666;
-    }
+                & > ul {
+                    & li {
+                        position: relative;
 
-    .nav-bar .main-nav li>ul li {
-        position: relative;
-    }
+                        & a {
+                            background-color: #eee;
+                        }
 
-    .nav-bar .main-nav li>ul li a,
-    .nav-bar .main-nav li>ul li span {
-        background-color: #eee;
-    }
+                        & span {
+                            background-color: #eee;
+                        }
+                    }
+                }
 
-    .nav-bar .main-nav li {
-        line-height: 60px;
-        font-size: 30px;
+                & span {
+                    position: relative;
+
+                    &:after {
+                        content: "";
+                        width: 6px;
+                        height: 6px;
+                        position: absolute;
+                        top: 50%;
+                        margin-top: -2px;
+                        margin-left: 8px;
+                        transform: translateY(-50%) rotate(-45deg);
+                        border-left: 2px solid #666;
+                        border-bottom: 2px solid #666;
+                    }
+                }
+            }
+        }
     }
 
     /* ***************DIV Principales*********************** */
@@ -194,18 +199,19 @@
         padding: 20px;
         border: 1px solid #1294B8;
         font-size: 20px;
+
+        &:hover {
+            color: white;
+            transition: 0.3s;
+            transform: scale(1.1);
+            cursor: pointer;
+        }
+
+        &:focus {
+            outline: 0;
+        }
     }
 
-    .subscribe:hover {
-        color: white;
-        transition: 0.3s;
-        transform: scale(1.1);
-        cursor: pointer;
-    }
-
-    .subscribe:focus {
-        outline: 0;
-    }
 
     /***********************Image****************************** */
     .bg {
@@ -218,7 +224,6 @@
     }
 
     /* ******************* Product Features********************** */
-
     .h2feature {
         margin: 1em;
         font-size: 40px;
@@ -256,26 +261,34 @@
     }
 
     /* ************************Dynamic********************* */
-    .team-member .team .team2 {
-        filter: grayscale(100%);
-        transition: .3s ease-in-out;
-    }
-
-    .team-member-container:hover .team .team2 {
-        filter: grayscale(0);
-        transform: scale(1.1);
+    .team-member {
+        & .team {
+            & .team2 {
+                filter: grayscale(100%);
+                transition: .3s ease-in-out;
+            }
+        }
     }
 
     .team-member-container {
         position: relative;
         border-radius: 50%;
         overflow: hidden;
-    }
 
-    .team-member-container:hover .team-member-icons-container {
-        top: 60px;
-        left: 8px;
-        visibility: visible;
+        &:hover {
+            & .team {
+                & .team2 {
+                    filter: grayscale(0);
+                    transform: scale(1.1);
+                }
+            }
+
+            & .team-member-icons-container {
+                top: 60px;
+                left: 8px;
+                visibility: visible;
+            }
+        }
     }
 
     .column {
@@ -354,15 +367,16 @@
         border-radius: 20px;
         padding: 30px;
         width: 40%;
+
+        &:hover {
+            background-color: white;
+            color: black;
+            transition: 0.3s;
+            transform: scale(1.1);
+            cursor: pointer;
+        }
     }
 
-    .getstarted:hover {
-        background-color: white;
-        color: black;
-        transition: 0.3s;
-        transform: scale(1.1);
-        cursor: pointer;
-    }
 
     .white {
         text-align: center;
@@ -492,25 +506,34 @@
     }
 
     /* ***********************Blog**************************** */
-    .team-member2 .team3 .team2 {
-        transition: .3s;
+    .team-member2 {
+        & .team3 {
+            & .team2 {
+                transition: .3s;
+            }
+        }
     }
 
-    .team-member-container2:hover .team3 .team4 {
-        filter: brightness(50%);
-    }
 
     .team-member-container2 {
         position: relative;
         overflow: hidden;
-    }
 
-    .team-member-container2:hover .team-member-icons-container2 {
-        top: 20px;
-        left: 25px;
-        visibility: visible;
-        color: white;
-        font-size: 15px;
+        &:hover {
+            & .team-member-icons-container2 {
+                top: 20px;
+                left: 25px;
+                visibility: visible;
+                color: white;
+                font-size: 15px;
+            }
+
+            .team3 {
+                .team4 {
+                    filter: brightness(50%);
+                }
+            }
+        }
     }
 
     .column3 {
@@ -548,11 +571,12 @@
 
     .svg3 {
         display: flex;
+
+        &:hover {
+            cursor: pointer;
+        }
     }
 
-    .svg3:hover {
-        cursor: pointer;
-    }
 
     .client2 {
         margin-top: 20px;
@@ -565,7 +589,6 @@
     }
 
     /* ***********************Footer**************************** */
-
     footer {
         padding: 3em;
         height: 27vh;
@@ -591,7 +614,7 @@
 }
 
 /* Ipad air (landscape) ----------- */
-@media only screen and (device-width :1180px) and (device-height : 820px) and (-webkit-device-pixel-ratio : 2) {
+@media (min-width: 1024px) and (max-width: 1180px) and (orientation: landscape) {
 
     /* ****************Général****************************** */
     .header {
@@ -624,7 +647,6 @@
 
     .pricing {
         height: 220vh;
-
     }
 
     .blog {
@@ -659,9 +681,10 @@
         align-items: center;
     }
 
-    nav ul {
-        padding: 0em;
-
+    nav {
+        ul {
+            padding: 0;
+        }
     }
 
     /************** nav Secondaire *******/
@@ -674,7 +697,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-top: 0%;
+        margin-top: 0;
     }
 
     .flexfeature {
@@ -724,18 +747,19 @@
         padding: 20px;
         border: 1px solid #1294B8;
         font-size: 20px;
+
+        &:hover {
+            color: white;
+            transition: 0.3s;
+            transform: scale(1.1);
+            cursor: pointer;
+        }
+
+        &:focus {
+            outline: 0;
+        }
     }
 
-    .subscribe:hover {
-        color: white;
-        transition: 0.3s;
-        transform: scale(1.1);
-        cursor: pointer;
-    }
-
-    .subscribe:focus {
-        outline: 0;
-    }
 
     /***********************Image****************************** */
     .bg {
@@ -748,7 +772,6 @@
     }
 
     /* ******************* Product Features********************** */
-
     .h2feature {
         margin: 1em;
         font-size: 40px;
@@ -787,26 +810,35 @@
     }
 
     /* ************************Dynamic********************* */
-    .team-member .team .team2 {
-        filter: grayscale(100%);
-        transition: .3s ease-in-out;
+    .team-member {
+        & .team {
+            & .team2 {
+                filter: grayscale(100%);
+                transition: .3s ease-in-out;
+            }
+        }
     }
 
-    .team-member-container:hover .team .team2 {
-        filter: grayscale(0);
-        transform: scale(1.1);
-    }
 
     .team-member-container {
         position: relative;
         border-radius: 50%;
         overflow: hidden;
-    }
 
-    .team-member-container:hover .team-member-icons-container {
-        top: 60px;
-        left: 8px;
-        visibility: visible;
+        &:hover {
+            & .team-member-icons-container {
+                top: 60px;
+                left: 8px;
+                visibility: visible;
+            }
+
+            & .team {
+                & .team2 {
+                    filter: grayscale(0);
+                    transform: scale(1.1);
+                }
+            }
+        }
     }
 
     .column {
@@ -847,11 +879,12 @@
         width: 20px;
         height: 20px;
         display: flex;
+
+        &:hover {
+            cursor: pointer;
+        }
     }
 
-    .svg2:hover {
-        cursor: pointer;
-    }
 
     .client {
         text-align: center;
@@ -885,14 +918,14 @@
         border-radius: 20px;
         padding: 30px;
         width: 40%;
-    }
 
-    .getstarted:hover {
-        background-color: white;
-        color: black;
-        transition: 0.3s;
-        transform: scale(1.1);
-        cursor: pointer;
+        &:hover {
+            background-color: white;
+            color: black;
+            transition: 0.3s;
+            transform: scale(1.1);
+            cursor: pointer;
+        }
     }
 
     .white {
@@ -1023,25 +1056,34 @@
     }
 
     /* ***********************Blog**************************** */
-    .team-member2 .team3 .team2 {
-        transition: .3s;
-    }
+    .team-member2 {
 
-    .team-member-container2:hover .team3 .team4 {
-        filter: brightness(50%);
+        & .team3 {
+            & .team2 {
+                transition: .3s;
+            }
+        }
     }
 
     .team-member-container2 {
         position: relative;
         overflow: hidden;
-    }
 
-    .team-member-container2:hover .team-member-icons-container2 {
-        top: 20px;
-        left: 25px;
-        visibility: visible;
-        color: white;
-        font-size: 15px;
+        &:hover {
+            & .team-member-icons-container2 {
+                top: 20px;
+                left: 25px;
+                visibility: visible;
+                color: white;
+                font-size: 15px;
+            }
+
+            & .team3 {
+                & .team4 {
+                    filter: brightness(50%);
+                }
+            }
+        }
     }
 
     .column3 {
@@ -1079,11 +1121,12 @@
 
     .svg3 {
         display: flex;
+
+        &:hover {
+            cursor: pointer;
+        }
     }
 
-    .svg3:hover {
-        cursor: pointer;
-    }
 
     .client2 {
         margin-top: 20px;
@@ -1096,7 +1139,6 @@
     }
 
     /* ***********************Footer**************************** */
-
     footer {
         padding: 3em;
         height: 40vh;
